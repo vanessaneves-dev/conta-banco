@@ -1,11 +1,30 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
 public class ContaTerminal {
-    public static void main(String[] args) throws Exception {
-        // TODO: Conhecer e importar a class Scanner
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        // Exibir as mensagens para o usuário
+        System.out.println("Digite o nome do cliente:");
+        String cliente = scanner.nextLine();
 
-        // Obter os valores digitados no terminal
+        System.out.println("Digite o número da agência:");
+        int agencia = scanner.nextInt();
+        scanner.nextLine();
 
-        // Exibir a mensagem final
+        System.out.println("Digite o número da conta:");
+        String numero = scanner.nextLine();
+
+        System.out.println("Digite o saldo da conta:");
+        double saldo = scanner.nextDouble();
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        String saldoFormatado = df.format(saldo);
+
+        System.out
+                .println("Olá " + cliente + ", ficamos felizes por te-lô(a) conosco, segue seus dados: \n" +
+                        "Agência: " + agencia + "\n" +
+                        "Conta: " + numero + "\n" +
+                        "Saldo Atual: R$ " + saldoFormatado);
     }
 }
